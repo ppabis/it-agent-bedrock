@@ -25,5 +25,5 @@ resource "aws_secretsmanager_secret_version" "confluence" {
     username = var.confluence_username
     password = var.confluence_password
   })
-  lifecycle { ignore_changes = [ secret_string ] }
+  lifecycle { ignore_changes = [secret_string] }
 }
