@@ -31,13 +31,13 @@ data "aws_iam_policy_document" "bedrock_kb_policy" {
   }
 
   statement {
-    effect = "Allow"
-    actions = ["kms:Decrypt"]
+    effect    = "Allow"
+    actions   = ["kms:Decrypt"]
     resources = ["*"]
     condition {
-      test = "StringLike"
+      test     = "StringLike"
       variable = "kms:ViaService"
-      values = ["secretsmanager.${data.aws_region.current.name}.amazonaws.com"]
+      values   = ["secretsmanager.${data.aws_region.current.name}.amazonaws.com"]
     }
   }
 

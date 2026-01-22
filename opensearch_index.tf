@@ -42,6 +42,6 @@ resource "null_resource" "index" {
   }
   depends_on = [aws_opensearchserverless_collection.knowledge_base, aws_opensearchserverless_access_policy.data_policy, aws_opensearchserverless_security_policy.network]
   lifecycle {
-    replace_triggered_by = [ aws_opensearchserverless_collection.knowledge_base ]
+    replace_triggered_by = [aws_opensearchserverless_collection.knowledge_base]
   }
 }
