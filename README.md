@@ -27,3 +27,22 @@ tofu apply
 
 It could happen that during index creation the process fails (due to delay in
 applying OpenSearch policies). Simply try to plan and apply again.
+
+Lambda requirements
+--------
+
+Install Lambda requirements using Docker with Amazon Linux 2023 for full
+compatibility. Run the following command before deploying the Lambda.
+
+```bash
+docker run --rm -it \
+ -v $(pwd)/lambdas:/lambdas amazonlinux:2023 \
+ sh -c 'yum install python3-pip -y && pip install -t /lambdas/ requests'
+```
+
+Get JIRA field IDs, etc
+-----------------
+
+In order to make the Lambda functional and post JIRA tickets, you need to adapt
+it to your liking and use cases. For that, useful functions were added to
+`tools/get_fields.sh`. Edit the file and provide your own configuration.
