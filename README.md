@@ -5,10 +5,20 @@ This is a demo agent that will process and create some predefined JIRA tickets
 and use Confluence knowledge base to provide information as well as use it to
 validate the tickets to create.
 
+More details about this project
+------
+
 Read more in my blog posts:
+
+### Part 1 - Knowledge Base
 
 - [on pabis.eu](https://pabis.eu/blog/2026-01-25-IT-Support-Agent-AWS-Bedrock-Confluence.html)
 - [on dev.to](https://dev.to/aws-builders/it-support-agent-on-aws-bedrock-connecting-confluence-l6i)
+
+### Part 2 - JIRA ticket creation
+
+- [on pabis.eu](https://pabis.eu/blog/2026-01-27-IT-Support-Agent-AWS-Bedrock-JIRA-Ticket-Tool.html)
+- [on dev.to](https://dev.to/aws-builders/it-support-agent-on-aws-bedrock-jira-ticket-tool-2lc9)
 
 Building the infrastructure
 ----------
