@@ -45,4 +45,4 @@ Get JIRA field IDs, etc
 
 In order to make the Lambda functional and post JIRA tickets, you need to adapt
 it to your liking and use cases. For that, useful functions were added to
-`tools/get_fields.sh`. Edit the file and provide your own configuration.
+`utils/get_fields.sh`. Edit the file and provide your own configuration.
