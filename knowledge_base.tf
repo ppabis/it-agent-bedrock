@@ -49,7 +49,8 @@ data "aws_iam_policy_document" "bedrock_kb_policy" {
       "bedrock:CreateDataSource",
       "bedrock:GetDataSource",
       "bedrock:DescribeKnowledgeBase",
-      "bedrock:Retrieve"
+      "bedrock:Retrieve",
+      "bedrock:Rerank"
     ]
     resources = ["*"]
   }
