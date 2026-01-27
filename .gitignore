@@ -3,3 +3,6 @@ terraform.tfstate.*
 *.tfstate
 *.tfvars
 .terraform/
+lambdas/**/*
+!lambdas/*.py
+!lambdas/*.json

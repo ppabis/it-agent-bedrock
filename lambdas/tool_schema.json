@@ -1,0 +1,131 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Jira Ticket API",
+    "version": "1.0.0",
+    "description": "API for creating Jira tickets"
+  },
+  "paths": {
+    "/db-ticket": {
+      "post": {
+        "description": "Create a database access request ticket in Jira",
+        "operationId": "createDbTicket",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "summary",
+                  "database_names",
+                  "user_list",
+                  "permissions",
+                  "business_reason",
+                  "access_until"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "description": "Short ticket summary"
+                  },
+                  "database_names": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "List of database names (production, staging, development)"
+                  },
+                  "user_list": {
+                    "type": "string",
+                    "description": "One username per line in format firstname.lastname"
+                  },
+                  "permissions": {
+                    "type": "string",
+                    "description": "One permission per line in format db.table=VERB"
+                  },
+                  "business_reason": {
+                    "type": "string",
+                    "description": "Business justification for access"
+                  },
+                  "access_until": {
+                    "type": "string",
+                    "description": "Access end date in YYYY-MM-DD format"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Optional additional details"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/generic-ticket": {
+      "post": {
+        "description": "Create a generic Jira ticket",
+        "operationId": "createGenericTicket",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "summary",
+                  "description"
+                ],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "description": "Short ticket summary"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Detailed ticket description"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
