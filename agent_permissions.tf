@@ -26,7 +26,9 @@ data "aws_iam_policy_document" "agent_policy" {
       "bedrock:GetKnowledgeBase",
       "bedrock:ListKnowledgeBases",
       "bedrock:Retrieve",
-      "bedrock:RetrieveAndGenerate"
+      "bedrock:RetrieveAndGenerate",
+      "bedrock:ApplyGuardrail",
+      "bedrock:GetGuardrail"
     ]
     resources = ["*"]
   }
