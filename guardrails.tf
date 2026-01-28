@@ -62,8 +62,8 @@ resource "aws_bedrock_guardrail" "filtering" {
       action         = "ANONYMIZE"
       input_enabled  = true
       output_enabled = true
-      input_action = "ANONYMIZE"
-      output_action = "ANONYMIZE"
+      input_action   = "ANONYMIZE"
+      output_action  = "ANONYMIZE"
     }
 
     pii_entities_config {
@@ -71,8 +71,8 @@ resource "aws_bedrock_guardrail" "filtering" {
       action         = "ANONYMIZE"
       input_enabled  = true
       output_enabled = true
-      input_action = "ANONYMIZE"
-      output_action = "ANONYMIZE"
+      input_action   = "ANONYMIZE"
+      output_action  = "ANONYMIZE"
     }
 
     pii_entities_config {
@@ -80,8 +80,8 @@ resource "aws_bedrock_guardrail" "filtering" {
       action         = "ANONYMIZE"
       input_enabled  = true
       output_enabled = true
-      input_action = "ANONYMIZE"
-      output_action = "ANONYMIZE"
+      input_action   = "ANONYMIZE"
+      output_action  = "ANONYMIZE"
     }
 
     pii_entities_config {
@@ -89,8 +89,8 @@ resource "aws_bedrock_guardrail" "filtering" {
       action         = "ANONYMIZE"
       input_enabled  = true
       output_enabled = true
-      input_action = "ANONYMIZE"
-      output_action = "ANONYMIZE"
+      input_action   = "ANONYMIZE"
+      output_action  = "ANONYMIZE"
     }
   }
 
