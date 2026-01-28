@@ -7,7 +7,7 @@ locals {
     for profile in data.aws_bedrock_inference_profiles.agent_profile.inference_profile_summaries
     : profile.inference_profile_arn
     if strcontains(profile.inference_profile_name, "Nova 2 Lite")
-     && strcontains(profile.inference_profile_name, "EU")
+    && strcontains(profile.inference_profile_name, "EU")
   ][0]
   prompts = yamldecode(file("prompts.yaml"))
 }
@@ -20,6 +20,11 @@ resource "aws_bedrockagent_agent" "ticketagent" {
   depends_on              = [aws_bedrockagent_knowledge_base.confluence]
   prepare_agent           = true
   instruction             = local.prompts.agent_prompt
+
+  guardrail_configuration {
+    guardrail_identifier = aws_bedrock_guardrail_version.filtering.guardrail_arn
+    guardrail_version    = aws_bedrock_guardrail_version.filtering.version
+  }
 }
 
 resource "aws_bedrockagent_agent_action_group" "jira_tickets" {
@@ -54,7 +59,7 @@ resource "aws_bedrockagent_agent_knowledge_base_association" "confluence" {
 resource "aws_bedrockagent_agent_alias" "production" {
   agent_id         = aws_bedrockagent_agent.ticketagent.id
   agent_alias_name = "ticketagent-production"
-  depends_on       = [
+  depends_on = [
     aws_bedrockagent_agent_knowledge_base_association.confluence,
     aws_bedrockagent_agent_action_group.jira_tickets,
     aws_bedrockagent_agent_action_group.user_input
