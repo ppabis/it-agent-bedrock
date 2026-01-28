@@ -22,3 +22,7 @@ terraform {
 provider "aws" {
   region = "eu-central-1"
 }
+
+provider "awscc" {
+  region = "eu-central-1"
+}
