@@ -20,6 +20,11 @@ Read more in my blog posts:
 - [on pabis.eu](https://pabis.eu/blog/2026-01-27-IT-Support-Agent-AWS-Bedrock-JIRA-Ticket-Tool.html)
 - [on dev.to](https://dev.to/aws-builders/it-support-agent-on-aws-bedrock-jira-ticket-tool-2lc9)
 
+### Part 3 - Guardrails
+
+- [on pabis.eu](https://pabis.eu/blog/2026-01-29-IT-Support-Agent-AWS-Bedrock-Guardrails.html)
+- [on dev.to](https://dev.to/aws-builders/it-support-agent-on-aws-bedrock-implementing-guardrails-ch8)
+
 Building the infrastructure
 ----------
 
